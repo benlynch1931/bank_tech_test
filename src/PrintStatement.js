@@ -9,4 +9,8 @@ export default class PrintStatement {
   static printInfo(activity) {
     console.log(`${activity["date"]} || ${activity['credit']} ||  || ${activity["newBalance"]}`)
   }
+
+  static isZero(value) {
+    if (value === 0) { return "" } else { return value }
+  }
 }

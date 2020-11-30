@@ -28,4 +28,11 @@ describe('PrintStatement', () => {
       expect(consoleLogSpy.mock.calls[0][0]).toEqual("14/01/2012 || 500 ||  || 500")
     })
   })
+
+  describe(' #isZero', () => {
+
+    test(' it returns empty string when value is zero', () => {
+      expect(PrintStatement.isZero(0)).toEqual('')
+    })
+  })
 })
