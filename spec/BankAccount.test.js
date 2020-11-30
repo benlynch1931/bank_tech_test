@@ -10,4 +10,9 @@ describe('BankAccount', () => {
   test('is instantiated', () => {
     expect(account).toBeInstanceOf(BankAccount)
   })
+
+  test('balance and accountActivity variables are created', () => {
+    expect(account.balance).toEqual(0)
+    expect(account.activity).toEqual([])
+  })
 })
