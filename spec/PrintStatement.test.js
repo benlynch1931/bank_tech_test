@@ -9,6 +9,10 @@ describe('PrintStatement', () => {
     consoleLogSpy = jest.spyOn(console, 'log')
   })
 
+  afterEach(() => {
+    consoleLogSpy.mockClear();
+  })
+
   describe(' #printHeader', () => {
 
     test(' it prints statement headers', () => {
@@ -17,5 +21,11 @@ describe('PrintStatement', () => {
     })
   })
 
-  
+  describe(' #printInfo', () => {
+
+    test(' it prints each credit', () => {
+      PrintStatement.printInfo({'credit': 500, 'debit': 0, 'date': '14/01/2012', 'newBalance': 500})
+      expect(consoleLogSpy.mock.calls[0][0]).toEqual("14/01/2012 || 500 ||  || 500")
+    })
+  })
 })
