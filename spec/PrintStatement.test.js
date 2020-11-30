@@ -34,5 +34,9 @@ describe('PrintStatement', () => {
     test(' it returns empty string when value is zero', () => {
       expect(PrintStatement.isZero(0)).toEqual('')
     })
+
+    test(" it returns same value when value isn't zero", () => {
+      expect(PrintStatement.isZero(100)).toEqual(100)
+    })
   })
 })
