@@ -27,7 +27,11 @@ describe('BankAccount', () => {
   describe(' #debit', () => {
 
     test('accountActivity updates with date and amount of debit', () => {
-      expect(account.debit(500, '14/01/2012')).toEqual([{'credit': 0, 'debit': 500, 'date': '14/01/2012', 'newBalance': -500}])
+      expect(account.debit(500, '14/01/2012')).toEqual([{'credit': 0, 'debit': 500, 'date': '14/01/2012', 'newBalance': 0}])
+    })
+
+    test('owner cannot debit more than current balance', () => {
+      expect(account.debit(500, '14/01/2012')).toEqual('Error: unsufficient funds, please review your balance before debiting...')
     })
   })
 })

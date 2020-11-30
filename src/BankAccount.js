@@ -5,6 +5,7 @@ export default class BankAccount {
   constructor() {
     this.balance = 0;
     this.accountActivity = [];
+    this.insufficientFunds = 'Error: unsufficient funds, please review your balance before debiting...'
   }
 
   credit(deposit, date) {
@@ -14,6 +15,7 @@ export default class BankAccount {
   }
 
   debit(withdraw, date) {
+    if (withdraw > this.balance) { return this.insufficientFunds }
     this.accountActivity.push({'credit': 0, 'debit': withdraw, 'date': date, 'newBalance': this.balance - withdraw});
     this.balance -= withdraw;
     return this.accountActivity
