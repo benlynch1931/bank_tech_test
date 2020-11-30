@@ -27,6 +27,11 @@ describe('PrintStatement', () => {
       PrintStatement.printInfo({'credit': 500, 'debit': 0, 'date': '14/01/2012', 'newBalance': 500})
       expect(consoleLogSpy.mock.calls[0][0]).toEqual("14/01/2012 || 500 ||  || 500")
     })
+
+    test(' is prints each debit', () => {
+      PrintStatement.printInfo({'credit': 0, 'debit': 100, 'date': '14/11/2012', 'newBalance': -100})
+      expect(consoleLogSpy.mock.calls[0][0]).toEqual("14/11/2012 ||  || 100 || -100")
+    })
   })
 
   describe(' #isZero', () => {
