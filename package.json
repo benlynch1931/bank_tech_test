@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest --coverage",
-    "cov": "./node_modules/.bin/karma start"
+    "start": "node node_modules/http-server/bin/http-server"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "@babel/preset-env": "^7.12.7",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
   }
 }
