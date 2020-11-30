@@ -7,7 +7,7 @@ export default class PrintStatement {
   }
 
   static printInfo(activity) {
-    console.log(`${activity["date"]} || ${activity['credit']} ||  || ${activity["newBalance"]}`)
+    console.log(`${activity["date"]} || ${PrintStatement.isZero(activity["credit"])} || ${PrintStatement.isZero(activity["debit"])} || ${activity["newBalance"]}`)
   }
 
   static isZero(value) {
