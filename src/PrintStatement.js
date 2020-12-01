@@ -1,24 +1,22 @@
-"use strict";
-
 export default class PrintStatement {
-
   static printHeader() {
-    console.log("date || credit || debit || balance")
+    console.log("date || credit || debit || balance");
   }
 
   static printInfo(activity) {
-    console.log(`${activity["date"]} || ${PrintStatement.isZero(activity["credit"])} || ${PrintStatement.isZero(activity["debit"])} || ${activity["newBalance"]}`)
+    console.log(`${activity.date} || ${PrintStatement.isZero(activity.credit)} || ${PrintStatement.isZero(activity.debit)} || ${activity.newBalance}`);
   }
 
   static isZero(value) {
-    if (value === 0) { return "" } else { return value }
+    if (value === 0) { return ""; }
+    return value;
   }
 
   static printAll(accountActivity) {
-    accountActivity = accountActivity.reverse()
-    PrintStatement.printHeader()
-    for(var i = 0; i < accountActivity.length; i++) {
-      PrintStatement.printInfo(accountActivity[i])
+    const accountActivityRev = accountActivity.reverse();
+    PrintStatement.printHeader();
+    for (let i = 0; i < accountActivityRev.length; i += 1) {
+      PrintStatement.printInfo(accountActivityRev[i]);
     }
   }
 }
