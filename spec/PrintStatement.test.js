@@ -46,9 +46,13 @@ describe('PrintStatement', () => {
 
   describe(' #printAll', () => {
 
-    test(' it prints the header', () => {
-      PrintStatement.printAll()
+
+
+    test(' it iterates the activity array and prints each credit/debit', () => {
+      PrintStatement.printAll([{'date': '10/01/2012', 'credit': 1000, 'debit': 0, 'newBalance': 1000}, {'date': '14/01/2012', 'credit': 0, 'debit': 300, 'newBalance': 700}])
       expect(consoleLogSpy.mock.calls[0][0]).toEqual("date || credit || debit || balance")
+      expect(consoleLogSpy.mock.calls[2][0]).toEqual("10/01/2012 || 1000 ||  || 1000")
+      expect(consoleLogSpy.mock.calls[1][0]).toEqual("14/01/2012 ||  || 300 || 700")
     })
   })
 })

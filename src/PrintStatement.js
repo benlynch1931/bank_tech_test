@@ -14,7 +14,11 @@ export default class PrintStatement {
     if (value === 0) { return "" } else { return value }
   }
 
-  static printAll() {
+  static printAll(accountActivity) {
+    accountActivity = accountActivity.reverse()
     PrintStatement.printHeader()
+    for(var i = 0; i < accountActivity.length; i++) {
+      PrintStatement.printInfo(accountActivity[i])
+    }
   }
 }
