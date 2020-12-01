@@ -1,3 +1,5 @@
+import PrintStatement from './PrintStatement';
+
 export default class BankAccount {
   #balance;
 
@@ -26,5 +28,9 @@ export default class BankAccount {
     });
     this.#balance -= withdraw;
     return this.#accountActivity;
+  }
+
+  print() {
+    PrintStatement.printAll(this.#accountActivity)
   }
 }

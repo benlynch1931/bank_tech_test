@@ -1,4 +1,5 @@
 import BankAccount from '../src/BankAccount';
+import PrintStatement from '../src/PrintStatement';
 
 describe('BankAccount', () => {
   var account;
@@ -28,6 +29,15 @@ describe('BankAccount', () => {
 
     test('owner cannot debit more than current balance', () => {
       expect(account.debit(500, '14/01/2012')).toEqual('Error: insufficient funds, please review your balance.')
+    })
+  })
+
+  describe(' #print', () => {
+
+    test('method calls PrintStatement methods', () => {
+      const printing = jest.spyOn(PrintStatement, 'printAll')
+      account.print()
+      expect(printing).toHaveBeenCalled()
     })
   })
 })
