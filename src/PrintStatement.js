@@ -4,7 +4,11 @@ export default class PrintStatement {
   }
 
   static printInfo(activity) {
-    console.log(`${activity.date} || ${PrintStatement.isZero(activity.credit)} || ${PrintStatement.isZero(activity.debit)} || ${activity.newBalance}`);
+    const credit = PrintStatement.isZero(activity.credit);
+    const debit = PrintStatement.isZero(activity.debit);
+    // object destructuring to access two properties of the object
+    const [date,,, balance] = activity;
+    console.log(`${date} || ${credit} || ${debit} || ${balance}`);
   }
 
   static isZero(value) {
