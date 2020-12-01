@@ -13,4 +13,8 @@ export default class PrintStatement {
   static isZero(value) {
     if (value === 0) { return "" } else { return value }
   }
+
+  static printAll() {
+    PrintStatement.printHeader()
+  }
 }

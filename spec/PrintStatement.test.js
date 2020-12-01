@@ -5,7 +5,6 @@ describe('PrintStatement', () => {
   var consoleLogSpy
 
   beforeEach(() => {
-    // let consoleArr = [];
     consoleLogSpy = jest.spyOn(console, 'log')
   })
 
@@ -42,6 +41,14 @@ describe('PrintStatement', () => {
 
     test(" it returns same value when value isn't zero", () => {
       expect(PrintStatement.isZero(100)).toEqual(100)
+    })
+  })
+
+  describe(' #printAll', () => {
+
+    test(' it prints the header', () => {
+      PrintStatement.printAll()
+      expect(consoleLogSpy.mock.calls[0][0]).toEqual("date || credit || debit || balance")
     })
   })
 })
