@@ -7,8 +7,8 @@ export default class PrintStatement {
     const credit = PrintStatement.isZero(activity.credit);
     const debit = PrintStatement.isZero(activity.debit);
     // object destructuring to access two properties of the object
-    const [date,,, balance] = activity;
-    console.log(`${date} || ${credit} || ${debit} || ${balance}`);
+    const { date, newBalance } = activity;
+    console.log(`${date} || ${credit} || ${debit} || ${newBalance}`);
   }
 
   static isZero(value) {
