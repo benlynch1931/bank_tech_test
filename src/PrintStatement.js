@@ -18,8 +18,8 @@ export default class PrintStatement {
   static printAll(accountActivity) {
     const accountActivityRev = accountActivity.reverse();
     PrintStatement.printHeader();
-    for (let i = 0; i < accountActivityRev.length; i += 1) {
-      PrintStatement.printInfo(accountActivityRev[i]);
-    }
+    accountActivityRev.forEach(function(activity) {
+      PrintStatement.printInfo(activity);
+    })
   }
 }
