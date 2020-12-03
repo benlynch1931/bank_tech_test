@@ -24,14 +24,14 @@ describe("PrintStatement", () => {
       PrintStatement.printInfo({
         credit: 500, debit: 0, date: "14/01/2012", newBalance: 500,
       });
-      expect(logSpy.mock.calls[0][0]).toEqual("14/01/2012 || 500 ||  || 500");
+      expect(logSpy.mock.calls[0][0]).toEqual("14/01/2012 || 500.00 ||  || 500.00");
     });
 
     test(" is prints each debit", () => {
       PrintStatement.printInfo({
         credit: 0, debit: 100, date: "14/11/2012", newBalance: -100,
       });
-      expect(logSpy.mock.calls[0][0]).toEqual("14/11/2012 ||  || 100 || -100");
+      expect(logSpy.mock.calls[0][0]).toEqual("14/11/2012 ||  || 100.00 || -100.00");
     });
   });
 
@@ -41,7 +41,7 @@ describe("PrintStatement", () => {
     });
 
     test(" it returns same value when value isn't zero", () => {
-      expect(PrintStatement.checkZero(100)).toEqual(100);
+      expect(PrintStatement.checkZero(100)).toEqual((100).toFixed(2));
     });
   });
 
@@ -54,8 +54,8 @@ describe("PrintStatement", () => {
       }]);
       const consoleLogSpy = logSpy.mock.calls;
       expect(consoleLogSpy[0][0]).toEqual("date || credit || debit || balance");
-      expect(consoleLogSpy[2][0]).toEqual("10/01/2012 || 1000 ||  || 1000");
-      expect(consoleLogSpy[1][0]).toEqual("14/01/2012 ||  || 300 || 700");
+      expect(consoleLogSpy[2][0]).toEqual("10/01/2012 || 1000.00 ||  || 1000.00");
+      expect(consoleLogSpy[1][0]).toEqual("14/01/2012 ||  || 300.00 || 700.00");
     });
   });
 });

@@ -8,11 +8,11 @@ export default class PrintStatement {
     const debit = PrintStatement.checkZero(activity.debit);
     // object destructuring to access two properties of the object
     const { date, newBalance } = activity;
-    console.log(`${date} || ${credit} || ${debit} || ${newBalance}`);
+    console.log(`${date} || ${credit} || ${debit} || ${newBalance.toFixed(2)}`);
   }
 
   static checkZero(value) {
-    return value ? value : ""
+    return value ? value.toFixed(2) : ""
   }
 
   static printAll(accountActivity) {
