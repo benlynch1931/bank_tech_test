@@ -1,4 +1,4 @@
-import PrintStatement from './PrintStatement';
+import PrintStatement from './PrintStatement.js';
 
 export default class BankAccount {
   #balance;

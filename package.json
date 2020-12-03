@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest --coverage",
-    "start": "node node_modules/http-server/bin/http-server"
+    "start": "http-server"
   },
   "author": "",
   "license": "ISC",

@@ -1,5 +1,6 @@
 import BankAccount from "../src/BankAccount";
 import PrintStatement from "../src/PrintStatement";
+// jest.mock('../src/PrintStatement')
 
 describe("BankAccount", () => {
   let account;
@@ -33,9 +34,12 @@ describe("BankAccount", () => {
 
   describe(" #print", () => {
     test("method calls PrintStatement methods", () => {
-      const printing = jest.spyOn(PrintStatement, "printAll");
+      account.debit(500, "14/01/2012")
+      const printing = jest.spyOn(PrintStatement, "printAll").mockImplementation((int) => { return ;});
       account.print();
+      // expect(PrintStatement.printAll).toHaveBeenCalled();
       expect(printing).toHaveBeenCalled();
+
     });
   });
 });
