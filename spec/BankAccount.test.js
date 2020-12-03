@@ -8,10 +8,6 @@ describe("BankAccount", () => {
     account = new BankAccount();
   });
 
-  test("is instantiated", () => {
-    expect(account).toBeInstanceOf(BankAccount);
-  });
-
   describe(" #credit", () => {
     test("accountActivity updates with date and amount of credit", () => {
       expect(account.credit(1000, "10/01/2012")).toEqual([{
