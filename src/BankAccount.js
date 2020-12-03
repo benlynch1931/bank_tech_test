@@ -2,13 +2,13 @@ import PrintStatement from './PrintStatement';
 
 export default class BankAccount {
   #balance;
-
   #accountActivity;
+  fundsError = "Error: insufficient funds, please review your balance.";
 
   constructor() {
     this.#balance = 0;
     this.#accountActivity = [];
-    this.fundsError = "Error: insufficient funds, please review your balance.";
+
   }
 
   credit(deposit, date) {
