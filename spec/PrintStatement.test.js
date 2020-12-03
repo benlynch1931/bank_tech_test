@@ -37,11 +37,11 @@ describe("PrintStatement", () => {
 
   describe(" #isZero", () => {
     test(" it returns empty string when value is zero", () => {
-      expect(PrintStatement.isZero(0)).toEqual("");
+      expect(PrintStatement.checkZero(0)).toEqual("");
     });
 
     test(" it returns same value when value isn't zero", () => {
-      expect(PrintStatement.isZero(100)).toEqual(100);
+      expect(PrintStatement.checkZero(100)).toEqual(100);
     });
   });
 
